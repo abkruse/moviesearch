@@ -1,0 +1,25 @@
+<div>
+  <div class='titleHeader'>
+    <h1>Angular OMDb API Search</h1>
+  </div>
+  <br>
+  <form class='searchForm' name='search' ng-submit='searchSub()'>
+    <div>
+      <label>Enter a movie by title</label>
+    </div>
+    <div>
+      <input type="text" ng-model="vm.searchParams">
+    </div>
+    <br>
+    <input type='submit' class='btn btn-primary' value='Search!' />
+  </form>
+  <br>
+  <div class='container col-md-offset-2'>
+    <div ng-repeat='movie in vm.movies' class='movieBox col-md-4'>
+      <a href='' ng-href='/{{movie.imdbID}}'>
+        <h4>{{ movie.Title }}</h4>
+        <p>Year: {{ movie.Year }}</p>
+      </a>
+    </div>
+  </div>
+</div>
